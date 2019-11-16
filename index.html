@@ -29,6 +29,10 @@
    <!-- favicons
 	================================================== -->
 	<link rel="icon" type="image/png" href="favicon.png">
+    
+    <!-- AJAX
+	================================================== -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 
 </head>
 
@@ -213,28 +217,22 @@
         <div class="col-twelve" id="repoList">
             <div id="repoListContainer">
                 <ul id="repoListNavigator">
-                    <li><a href="#">AR/VR</a></li>
-                    <li><a href="#">CLASS</a></li>
-                    <li><a href="#">MISC</a></li>
-                    <li><a href="#">ALL</a></li>
+                    <li><a href="#portfolio" id="test" value="ar">AR/VR</a></li>
+                    <li><a href="#portfolio" value="class">CLASS</a></li>
+                    <li><a href="#portfolio" value="misc">MISC</a></li>
+                    <li><a href="#portfolio" value="all">ALL</a></li>
                 </ul>
             </div>
         </div>
    	</div> <!-- /section-intro--> 
 
    	<div class="row portfolio-content">
-
-   		<div class="col-twelve">
-
-   			<!-- portfolio-wrapper -->
-	         <div id="folio-wrapper" class="block-1-2 block-mob-full stack">
-                 
-                 
-                <script type = "text/javascript"> 
+        
+        <script type = "text/javascript"> 
                     $(document).ready( function(){
-                        $("#repoListNavigator a").click(function(){ 
-                            var category = $("#repoListNavigator li").val();
-                            if(category != ''){
+                        $("#test").click(function(){ 
+                            var category = $("#test").val();
+                            if(category == ''){
                                 $.ajax({
                                     type:         "POST",
                                     url:          "githubAPI.php",
@@ -266,6 +264,13 @@
                         });   
                     });                
                 </script>
+
+   		<div class="col-twelve">
+
+   			<!-- portfolio-wrapper -->
+	         <div id="folio-wrapper" class="block-1-2 block-mob-full stack">
+                 
+                 
                  
                  
                  
