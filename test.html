@@ -31,7 +31,7 @@
 
 </head>
     <body>
-        <script type = "text/javascript"> 
+        <!--<script type = "text/javascript"> 
             $(document).ready( function(){
                 $("#test").click(function(){ 
 
@@ -55,11 +55,11 @@
                                 for (var x in result){
                                     image = result[x].branches_url+"assets/preview.jpg"; 
 
-                                    content = "<div class='bgrid folio-item'><div class='item-wrap'><img src='"+image+"' alt='"+results[x].name+"'><a href='#modal-"+y+"' class='overlay'><div class='folio-item-table'><div class='folio-item-cell'><h3 class='folio-title'>"+results[x].name+"</h3><span class='folio-types'>"+result[x].language+"</span></div></div></a></div></div> <!-- /folio-item -->";
-
-                                    popup = "<div id='modal-"+y+"' class='popup-modal slider mfp-hide'><div class='media'><img src='"+image+"' alt='"+ result[x].name +"' /></div><div class='description-box'><h4>Liberty</h4><p>" + result[x].description +"</p><div class='categories'>Web Development</div></div><div class='link-box'><a href='"+ result[x].html_url +"'>Details</a><a href='#' class='popup-modal-dismiss'>Close</a></div></div> <!-- /modal-"+y+" -->";
+                                    content = "<div class='bgrid folio-item'><div class='item-wrap'><img src='"+image+"' alt='"+results[x].name+"'><a href='#modal-"+y+"' class='overlay'><div class='folio-item-table'><div class='folio-item-cell'><h3 class='folio-title'>"+results[x].name+"</h3><span class='folio-types'>"+result[x].language+"</span></div></div></a></div></div> <!-- /folio-item --><!--  ";
+<!--
+                                    popup = "<div id='modal-"+y+"' class='popup-modal slider mfp-hide'><div class='media'><img src='"+image+"' alt='"+ result[x].name +"' /></div><div class='description-box'><h4>Liberty</h4><p>" + result[x].description +"</p><div class='categories'>Web Development</div></div><div class='link-box'><a href='"+ result[x].html_url +"'>Details</a><a href='#' class='popup-modal-dismiss'>Close</a></div></div> <!-- /modal-"+y+" --><!--  ";
                                     
-                                    $("#folio-wrapper").append(content + popup);
+                                  $("#folio-wrapper").append(content + popup);
 
                                 }
 
@@ -67,11 +67,12 @@
                         });   
                 });   
             });                
-        </script>
+        </script>-->
         
-        <div id="folio-wrapper">
+        <div id="result2">
             THIS IS A TEST
             <a id="test">TEST</a>
+            <div id="result"></div>
         </div>
 
     </body>
@@ -82,4 +83,5 @@
    <script src="js/main.js"></script>
    <script src="js/navbar.js"></script>
    <script src="js/projects.js"></script>
+    <script src="js/githubAPI.js"></script>
 </html>

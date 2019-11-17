@@ -57,7 +57,8 @@
 						<li><a class="smoothscroll"  href="#portfolio" title="">Projects</a></li>
 						<!--<li><a class="smoothscroll"  href="#services" title="">Services</a></li>-->					
 						<li><a class="smoothscroll"  href="#contact" title="">Contact</a></li>	
-						<li><a href="styles.html" title="">Style Demo</a></li>				
+						<li><a class="smoothscroll"  href="login.html" title="">Login</a></li>	
+						<!--<li><a href="styles.html" title="">Style Demo</a></li>-->				
 					</ul>
 				</nav>    		
    		</div> <!-- /top-bar --> 
@@ -227,61 +228,11 @@
    	</div> <!-- /section-intro--> 
 
    	<div class="row portfolio-content">
-        
-        <script type = "text/javascript"> 
-                    $(document).ready( function(){
-                        $("#test").click(function(){ 
-                            var category = $("#test").val();
-                            if(category == ''){
-                                $.ajax({
-                                    type:         "POST",
-                                    url:          "githubAPI.php",
-                                    data:         "category="+category,
-
-                                    beforeSend: function(){         
-                                        $("#folio-wrapper").html("Grabbing Github Repositories....");
-                                    },
-
-                                    error: function(xhr, status, error) {  
-                                        alert( "Error Mesaage:  \r\nNumeric code is: "  + xhr.status + " \r\nError is " + error);   
-                                    },
-
-                                    success: function(result){
-                                        r = JSON.parse(result);
-                                        image = r.x.branches_url+"assets/preview.jpg"; 
-                                        
-                                        content = "<div class='bgrid folio-item'><div class='item-wrap'><img src=image alt=r.x.name><a href='#modal-01' class='overlay'><div class='folio-item-table'><div class='folio-item-cell'><h3 class='folio-title'>r.x.name</h3><span class='folio-types'>"+r.x.language+"</span></div></div></a></div></div> <!-- /folio-item -->";
-                                        
-                                        
-                                        popup = "<div id='modal-01' class='popup-modal slider mfp-hide'><div class='media'><img src="+image+" alt="+ r.x.name +" /></div><div class='description-box'><h4>Liberty</h4><p>" + r.x.description +"</p><div class='categories'>Web Development</div></div><div class='link-box'><a href="+ r.x.html_url +">Details</a><a href='#' class='popup-modal-dismiss'>Close</a></div></div> <!-- /modal-01 -->";
-                                        
-                                        
-                                        $("#folio-wrapper").html(content + popup);
-
-                                    }
-                                }); 
-                            };    
-                        });   
-                    });                
-                </script>
-
    		<div class="col-twelve">
-
    			<!-- portfolio-wrapper -->
 	         <div id="folio-wrapper" class="block-1-2 block-mob-full stack">
-                 
-                 
-                 
-                 
-                 
-                 
-                 
-                 
-                 
-                 
-                 
-
-	         	<div class="bgrid folio-item">
+	         	
+                 <div class="bgrid folio-item">
 	               <div class="item-wrap">
 	               	<img src="images/portfolio/liberty.jpg" alt="Liberty">
 	                  <a href="#modal-01" class="overlay">	                  	           
