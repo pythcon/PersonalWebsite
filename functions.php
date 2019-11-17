@@ -1,11 +1,10 @@
 <?php
 //PHP FUNCTIONS
 
-function redirect($message, $targetfile, $delay){
+function redirect($targetfile){
     global $db;
-    echo $message;
 
-    header("refresh: $delay, url = $targetfile");
+    header("refresh: 0, url = $targetfile");
 
     exit();
 }
@@ -22,7 +21,6 @@ function gatekeeper(){
         exit();
     }
 }
-
 
 function authenticate($user, $pass){
     $dsn = "mysql:host=$db_hostname;dbname=$db_project";
