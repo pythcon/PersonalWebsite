@@ -1,4 +1,5 @@
 <?php
+include('account.php');
 //PHP FUNCTIONS
 
 function redirect($targetfile){
@@ -27,7 +28,7 @@ function authenticate($user, $pass){
     try {
         $db = new PDO($dsn, $db_username, $db_password);
         echo "Connected successfully<br>";
-        $sql = "SELECT * FROM accounts WHERE username='$user' AND password='$pass'";
+        $sql = "SELECT * FROM login WHERE username='$user' AND password='$pass'";
         $q = $db->prepare($sql);
         $q->execute();
         $results = $q->fetchAll();
