@@ -11,7 +11,6 @@ function redirect($targetfile){
 }
     
 function gatekeeper(){
-    global $db;
     //check if authenticated
     if (!$_SESSION['logged']){
         echo"
@@ -24,7 +23,7 @@ function gatekeeper(){
 }
 
 function authenticate($user, $pass){
-    $dsn = "mysql:host=$db_hostname;dbname=$db_project";
+    $dsn = "mysql:host=$db_hostname;port=8889;dbname=$db_project";
     try {
         $db = new PDO($dsn, $db_username, $db_password);
         echo "Connected successfully<br>";
