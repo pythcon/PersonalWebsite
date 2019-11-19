@@ -6,12 +6,13 @@ ini_set('display_errors' , 1);
 include('account.php');
 include('functions.php');
 
-$user = filter_input(INPUT_POST, 'user', FILTER_SANITIZE_SPECIAL_CHARS, FILTER_REQUIRE_ARRAY);
+$user = filter_input(INPUT_POST, 'user', FILTER_SANITIZE_SPECIAL_CHARS);
 
-$pass = filter_input(INPUT_POST, 'pass', FILTER_SANITIZE_SPECIAL_CHARS, FILTER_REQUIRE_ARRAY);
+$pass = filter_input(INPUT_POST, 'pass', FILTER_SANITIZE_SPECIAL_CHARS);
 
 if (!authenticate($user, $pass)){
-    redirect("<span style=\"color:red;\">Incorrect Credentials...Redirecting...</span>", "/index.html", $delay);
+    echo "<script>alert(\"Incorrect Credentials...\");</script>";
+    redirect("/index.html");
     die();
 }
 
