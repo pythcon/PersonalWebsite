@@ -66,13 +66,13 @@
                         <input type="radio" name="pageToEdit" id="pageToEdit" value="1" checked="checked" onclick="showResumeUpload();">
                             Resume
                         <br>
-                        <input type="radio" name="pageToEdit" id="pageToEdit" value="2" onclick="showProjectUpload()">
+                        <input type="radio" name="pageToEdit" id="pageToEdit" value="2" onclick="showProjectUpload();">
                             Projects
                     </div>
                     
                 </div>
 	   			<div class="dashPageUploadContainer">
-                    <div class="dashResumeContainer">
+                    <div class="dashResumeContainer" id="dashResumeContainer">
                         <form action="upload.php" method="post" enctype="multipart/form-data">
                             Select Resume to upload <br>(Name it "ToddMurphyResume.pdf):
                             <hr>
@@ -83,7 +83,8 @@
                             <input type="submit" value="Upload Resume" name="submit">
                         </form>
                     </div>
-                    <div class="dashProjectsContainer">
+                    
+                    <div class="dashProjectsContainer" id="dashProjectsContainer">
                         <form action="upload.php" method="post" enctype="multipart/form-data">
                             Select a Project to upload:
                             <hr>
