@@ -95,8 +95,39 @@ function addProject($name, $description, $link){
         $q = $db->prepare($sql);
 
         if($q->execute() === false){
-            die('Error inserting the department.');
+            die('Error inserting new project.');
         }
+        
+        $q->closeCursor();
+
+
+    } catch(PDOException $e) {
+        echo "Connection failed: " . $e->getMessage();
+        exit();
+    }
+    
+}
+function listProjects(&$projectsList){
+    global $db_hostname;
+    global $db_username;
+    global $db_password;
+    global $db_project;
+    
+    $dsn = "mysql:host=$db_hostname;dbname=$db_project";
+    try {
+        $db = new PDO($dsn, $db_username, $db_password);
+        $sql = "SELECT * FROM projects";
+        $q = $db->prepare($sql);
+        $q->execute();
+        $results = $q->fetchAll();
+
+        if($q->rowCount() > 0){
+            foreach ($results as $row){
+                $projectsList .= "<option value=".$row['name']">".$row['name']."</option>"
+            }
+        }else{
+            
+        } 
         
         $q->closeCursor();
 

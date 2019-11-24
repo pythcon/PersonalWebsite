@@ -76,7 +76,10 @@ gatekeeper();
                             Resume
                         <br>
                         <input type="radio" name="pageToEdit" id="pageToEdit" value="2" onclick="showProjectUpload();">
-                            Projects
+                            Add Project
+                        <br>
+                        <input type="radio" name="pageToEdit" id="pageToEdit" value="3" onclick="showProjectRemoval();">
+                            Remove Project
                     </div>
                     
                 </div>
@@ -112,6 +115,17 @@ gatekeeper();
                             <br><br>
                             <input type="submit" value="Upload Project" name="submit">
                         </form>
+                    </div>
+                    
+                    <div class="dashRemoveProjectsContainer" id="dashRemoveProjectsContainer">
+                            Select a Project to Remove:
+                            <hr>
+                            <select class="projectsList" id="projectsList">
+                                <?php
+                                    
+                                ?>
+                            </select>
+                            <input type="submit" value="Remove Project" name="submit">
                     </div>
                 </div>
 
