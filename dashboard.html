@@ -76,7 +76,7 @@
                         <form action="upload.php" method="post" enctype="multipart/form-data">
                             Select Resume to upload <br>(Name it "ToddMurphyResume.pdf):
                             <hr>
-                            <input type="hidden" name="resumeType" id="resumeType">
+                            <input type="hidden" name="function" id="function" value="resume">
                             <label>Resume PDF</label>
                             <input type="file" name="resumeToUpload" id="resumeToUpload">
                             <br><br>
@@ -88,7 +88,7 @@
                         <form action="upload.php" method="post" enctype="multipart/form-data">
                             Select a Project to upload:
                             <hr>
-                            <input type="hidden" name="projectType" id="projectType">
+                            <input type="hidden" name="function" id="function" value="project">
                             <label>Project Name</label>
                             <input type="text" name="projectName" id="projectName" placeholder="Name of Project" required>
                             <br>

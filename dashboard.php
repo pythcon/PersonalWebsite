@@ -64,27 +64,55 @@ gatekeeper();
    	<div class="intro-content">
    		<div class="row">
 
-   			<div class="col-twelve">
+   			<div class="col-twelve" id="dashMainContainer">
 
 	   			<h5>Project Management</h5>
                 <br>
-                <div class="infoForm">
+                <div class="dashPageSelectContainer">
                     <h3>Management Console</h3>
-                    <p>Welcome to the management console.
+                    <p>Please select a page to edit.</p>
+                    <div class="radioPage">
+                        <input type="radio" name="pageToEdit" id="pageToEdit" value="1" checked="checked" onclick="showResumeUpload();">
+                            Resume
                         <br>
-                        Please log in.
-                    </p>
+                        <input type="radio" name="pageToEdit" id="pageToEdit" value="2" onclick="showProjectUpload();">
+                            Projects
+                    </div>
                     
                 </div>
-	   			<div class="loginForm">
-                    <form action="handler.php" method="post">
-                            <label>Username</label>
-                            <input type="text" name="user">
-                            <label>Password</label>
-                            <input type="password" name="pass">
-                        <br>
-                            <input type="submit" name="submit" value="Login">
-                    </form>
+	   			<div class="dashPageUploadContainer">
+                    <div class="dashResumeContainer" id="dashResumeContainer">
+                        <form action="upload.php" method="post" enctype="multipart/form-data">
+                            Select Resume to upload <br>(Name it "ToddMurphyResume.pdf):
+                            <hr>
+                            <input type="hidden" name="function" id="function" value="resume">
+                            <label>Resume PDF</label>
+                            <input type="file" name="resumeToUpload" id="resumeToUpload">
+                            <br><br>
+                            <input type="submit" value="Upload Resume" name="submit">
+                        </form>
+                    </div>
+                    
+                    <div class="dashProjectsContainer" id="dashProjectsContainer">
+                        <form action="upload.php" method="post" enctype="multipart/form-data">
+                            Select a Project to upload:
+                            <hr>
+                            <input type="hidden" name="function" id="function" value="project">
+                            <label>Project Name</label>
+                            <input type="text" name="projectName" id="projectName" placeholder="Name of Project" required>
+                            <br>
+                            <label>Project Description</label>
+                            <input type="text" name="projectDescription" id="projectDescription" placeholder="Description of Project" required>
+                            <br>
+                            <label>Project Link</label>
+                            <input type="text" name="projectLink" id="projectLink" placeholder="Link for Project" required>
+                            <br>
+                            <label>Project Image</label>
+                            <input type="file" name="projectImage" id="projectImage" required>
+                            <br><br>
+                            <input type="submit" value="Upload Project" name="submit">
+                        </form>
+                    </div>
                 </div>
 
 	   		</div>  
@@ -140,7 +168,7 @@ gatekeeper();
    <script src="js/plugins.js"></script>
    <script src="js/main.js"></script>
    <script src="js/navbar.js"></script>
-   <script src="js/projects.js"></script>
+   <script src="js/dashboard.js"></script>
 
 </body>
 

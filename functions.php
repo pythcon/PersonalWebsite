@@ -49,27 +49,63 @@ function authenticate($user, $pass){
     }
 }
 
-function uploadFile(){
-    if ($_POST['resumeType']){
+function uploadFile($type, $name, &$fileName){
+    if ($type == "resume"){
         $file = $_FILES["resumeToUpload"];
         $target_dir = "documents/";
+        $target_file = $target_dir . "ToddMurphySimpleResume.pdf";
+    }else if ($type == "project"){
+        $file = $_FILES["projectImage"];
+        $target_dir = "projects/$name/";
+        $target_file = $target_dir . basename($file["name"]);
     }else{
-        $file = $_FILES["projectToUpload"];
-        $target_dir = "projects/";
+        die("Type Error.");
     }
 
-    $target_file = $target_dir . basename($file["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
     // if everything is ok, try to upload file
+    if (move_uploaded_file($file["tmp_name"], $target_file)) {
+        echo "The file ". basename( $file ). " has been uploaded.";
+        echo"
+        <script>
+            alert(\"The file ". basename($file)." has been uploaded."\");
+            window.location.replace(\"/dashboard.php\");
+        </script>";
+        $fileName = $target_file;
     } else {
-        if (move_uploaded_file($file["tmp_name"], $target_file)) {
-            echo "The file ". basename( $file ). " has been uploaded.";
-        } else {
-            echo "Sorry, there was an error uploading your file.";
-        }
+        echo "Sorry, there was an error uploading your file.";
     }
+}
+
+function addProject($name, $description, $link){
+    global $db_hostname;
+    global $db_username;
+    global $db_password;
+    global $db_project;
+    
+    //upload file
+    uploadFile("project", $name, $fileName);
+    
+    $dsn = "mysql:host=$db_hostname;dbname=$db_project";
+    try {
+        $db = new PDO($dsn, $db_username, $db_password);
+        $sql = "INSERT INTO projects VALUES ('$name','$description','$link','$fileName')";
+        $q = $db->prepare($sql);
+
+        if($q->execute() === false){
+            die('Error inserting the department.');
+        }
+        
+        $q->closeCursor();
+
+
+    } catch(PDOException $e) {
+        echo "Connection failed: " . $e->getMessage();
+        exit();
+    }
+    
 }
 
 
