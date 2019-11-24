@@ -70,7 +70,7 @@ function uploadFile($type, $name, &$fileName){
         echo "The file ". basename( $file ). " has been uploaded.";
         echo"
         <script>
-            alert(\"The file ". basename($file)." has been uploaded."\");
+            alert(\"The file ". basename($file)." has been uploaded.\");
             window.location.replace(\"/dashboard.php\");
         </script>";
         $fileName = $target_file;
