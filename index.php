@@ -402,7 +402,7 @@ ini_set('display_errors' , 1);
    			<h5>Contact</h5>
    			<h1>I'd Love To Hear From You.</h1>
 
-   			<p class="lead">Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do.</p>
+   			<p class="lead">Shoot me a message and I will get back to you as soon as possible.</p>
 
    		</div> 
    	</div> <!-- /section-intro -->
