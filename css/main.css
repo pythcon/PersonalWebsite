@@ -2667,21 +2667,17 @@ footer .copyright span:last-child::after {
     margin: auto;
 }
 
-.projectARVR{
+.projectsARVR{
     display: none;
 }
 
-.projectCLASS{
+.projectsCLASS{
     display: none;
 }
 
-.projectMISC{
+.projectsMISC{
     display: none;
 }
-
-
-
-
 
 
 /*Dashboard*/

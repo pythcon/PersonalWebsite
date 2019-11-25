@@ -163,7 +163,95 @@ function removeProject($name){
         exit();
     }
     
+    $folder = str_replace(" ", "\\ ", $name);
+    shell_exec('rm -rf /var/www/html/projects/'.$folder);
+    
 }
+
+function populateProjects($category, &$projectOutput){
+    global $db_hostname;
+    global $db_username;
+    global $db_password;
+    global $db_project;
+    $counter = 0;
+    $projectOutput = "";
+    
+    $dsn = "mysql:host=$db_hostname;dbname=$db_project";
+    try {
+        $db = new PDO($dsn, $db_username, $db_password);
+        
+        if ($category == "all"){
+            $sql = "SELECT * FROM projects";
+        }else{
+            $sql = "SELECT * FROM projects WHERE category='$category'";
+        }
+        $q = $db->prepare($sql);
+        $q->execute();
+        $results = $q->fetchAll();
+
+        if($q->rowCount() > 0){
+            foreach ($results as $row){
+                $name        = ucwords($row['name']);
+                $description = $row['description'];
+                $category    = $row['category'];
+                $link        = $row['link'];
+                $image       = $row['image'];
+                
+                $projectOutput .= "
+                    <div class='bgrid folio-item'>
+                                   <div class='item-wrap'>
+                                       <img src='$image' alt='$name'>
+                                       <a href='#modal-$counter' class='overlay'>
+                                           <div class='folio-item-table'>
+                                               <div class='folio-item-cell'>
+                                                   <h3 class='folio-title'>$name</h3>   
+                                                   <span class='folio-types'>
+                                                       $category
+                                                   </span>		     		
+                                               </div> 	                      	
+                                           </div>                    
+                                       </a>
+                                   </div>
+                               </div> <!-- /folio-item -->
+
+
+
+                            <!-- modal popups - begin
+                            ============================================================= -->
+
+
+
+                            <div id='modal-$counter' class='popup-modal slider mfp-hide'>	
+                                    <div class='media'>
+                                        <img src='$image' alt='$name' />
+                                    </div>      	
+                                   <div class='description-box'>
+                                      <h4>$name</h4>		      
+                                      <p>$description</p>
+                                      <div class='categories'>$category</div>			               
+                                   </div>
+                                 <div class='link-box'>
+                                    <a href='$link'>Details</a>
+                                    <a href='#' class='popup-modal-dismiss'>Close</a>
+                                 </div>		      
+                               </div> <!-- /modal-$counter -->
+                ";
+                
+                $counter++;
+            }
+        }else{
+            echo "Error listing projects.";
+        } 
+        
+        $q->closeCursor();
+
+    } catch(PDOException $e) {
+        echo "Connection failed: " . $e->getMessage();
+        exit();
+    }
+    
+}
+    
 
 
 ?>
