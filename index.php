@@ -228,10 +228,10 @@ ini_set('display_errors' , 1);
         <div class="col-twelve" id="repoList">
             <div id="repoListContainer">
                 <ul id="repoListNavigator">
-                    <li><a href="#portfolio" onclick="showARVR();" value="ar">AR/VR</a></li>
-                    <li><a href="#portfolio" onclick="showCLASS();" value="class">CLASS</a></li>
-                    <li><a href="#portfolio" onclick="showMISC();" value="misc">MISC</a></li>
-                    <li><a href="#portfolio" onclick="showALL();" value="all">ALL</a></li>
+                    <li id="liARVR"><a href="#portfolio" onclick="showARVR();" value="ar">AR/VR</a></li>
+                    <li id="liCLASS"><a href="#portfolio" onclick="showCLASS();" value="class">CLASS</a></li>
+                    <li id="liMISC"><a href="#portfolio" onclick="showMISC();" value="misc">MISC</a></li>
+                    <li class="currentCategory" id="liALL"><a href="#portfolio" onclick="showALL();" value="all">ALL</a></li>
                 </ul>
             </div>
         </div>
