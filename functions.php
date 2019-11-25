@@ -213,13 +213,18 @@ function populateProjects($category, &$projectOutput){
                                        </a>
                                    </div>
                                </div> <!-- /folio-item -->
+                ";
+                $counter++;
+            }
+            $counter = 0;
+            foreach ($results as $row){
+                $name        = ucwords($row['name']);
+                $description = $row['description'];
+                $category    = $row['category'];
+                $link        = $row['link'];
+                $image       = $row['image'];
 
-
-
-                            <!-- modal popups - begin
-                            ============================================================= -->
-
-
+                $projectOutput .= "
 
                             <div id='modal-$counter' class='popup-modal slider mfp-hide'>	
                                     <div class='media'>

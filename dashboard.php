@@ -39,7 +39,7 @@ gatekeeper();
 
    <!-- favicons
 	================================================== -->
-	<link rel="icon" type="image/png" href="favicon.png">
+	<link rel="icon" type="image/png" href="/logos/websiteIcon.png">
     
     <!-- AJAX
 	================================================== -->

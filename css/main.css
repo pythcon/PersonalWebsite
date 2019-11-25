@@ -2629,7 +2629,8 @@ footer .copyright span:last-child::after {
 }
 
 #repoList li a:hover {
-  background-color: #111111;
+    background-color: #111111;
+    border-radius: 5px;
 }
 
 #repoListContainer{
@@ -2637,7 +2638,10 @@ footer .copyright span:last-child::after {
     width: 50%; 
 }
 
-
+.currentCategory{
+    background-color: #111111;
+    border-radius: 5px;
+}
 
 /*Login Page*/
 
