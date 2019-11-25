@@ -2667,6 +2667,22 @@ footer .copyright span:last-child::after {
     margin: auto;
 }
 
+.projectARVR{
+    display: none;
+}
+
+.projectCLASS{
+    display: none;
+}
+
+.projectMISC{
+    display: none;
+}
+
+
+
+
+
 
 /*Dashboard*/
 .dashPageSelectContainer{
@@ -2697,6 +2713,10 @@ footer .copyright span:last-child::after {
     margin: auto;
 }
 
+.dashPageUploadContainer select{
+    margin: auto;
+}
+
 .dashProjectsContainer{
     display: none;
 }
@@ -2705,4 +2725,7 @@ footer .copyright span:last-child::after {
     display: none;
 }
 
+.dashRemoveProjectsContainer select{
+    margin: auto;
+}
 

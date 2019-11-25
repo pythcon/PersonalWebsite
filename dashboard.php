@@ -2,6 +2,8 @@
 session_start();
 include ('account.php');
 include ('functions.php');
+error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
+ini_set('display_errors' , 1);
 
 gatekeeper();
 
@@ -42,6 +44,7 @@ gatekeeper();
     <!-- AJAX
 	================================================== -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="js/dashboard.js"></script>
 
 </head>
 
@@ -107,6 +110,14 @@ gatekeeper();
                             <label>Project Description</label>
                             <input type="text" name="projectDescription" id="projectDescription" placeholder="Description of Project" required>
                             <br>
+                            <label>Project Category</label>
+                            <select name="projectCategory">
+                                <option>(select a category)</option>
+                                <option value="arvr">AR/VR</option>
+                                <option value="class">CLASS</option>
+                                <option value="misc">MISC</option>
+                            </select>
+                            <br>
                             <label>Project Link</label>
                             <input type="text" name="projectLink" id="projectLink" placeholder="Link for Project" required>
                             <br>
@@ -120,12 +131,17 @@ gatekeeper();
                     <div class="dashRemoveProjectsContainer" id="dashRemoveProjectsContainer">
                             Select a Project to Remove:
                             <hr>
-                            <select class="projectsList" id="projectsList">
-                                <?php
-                                    
-                                ?>
-                            </select>
-                            <input type="submit" value="Remove Project" name="submit">
+                            <form action="removeProject.php" method="post">
+                                <select name="projectsList">
+                                    <option>(select a project)</option>
+                                    <?php
+                                        listProjects($projectsList);
+                                        echo $projectsList;
+                                    ?>
+                                </select>
+                                <br>
+                                <input type="submit" value="Remove Project" name="submit">
+                            </form>
                     </div>
                 </div>
 
@@ -182,7 +198,6 @@ gatekeeper();
    <script src="js/plugins.js"></script>
    <script src="js/main.js"></script>
    <script src="js/navbar.js"></script>
-   <script src="js/dashboard.js"></script>
 
 </body>
 

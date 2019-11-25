@@ -79,7 +79,7 @@ function uploadFile($type, $name, &$fileName){
     }
 }
 
-function addProject($name, $description, $link){
+function addProject($name, $description, $category, $link){
     global $db_hostname;
     global $db_username;
     global $db_password;
@@ -91,7 +91,7 @@ function addProject($name, $description, $link){
     $dsn = "mysql:host=$db_hostname;dbname=$db_project";
     try {
         $db = new PDO($dsn, $db_username, $db_password);
-        $sql = "INSERT INTO projects VALUES ('$name','$description','$link','$fileName')";
+        $sql = "INSERT INTO projects VALUES ('$name','$description','$category', '$link','$fileName')";
         $q = $db->prepare($sql);
 
         if($q->execute() === false){
@@ -107,6 +107,7 @@ function addProject($name, $description, $link){
     }
     
 }
+
 function listProjects(&$projectsList){
     global $db_hostname;
     global $db_username;
@@ -123,15 +124,40 @@ function listProjects(&$projectsList){
 
         if($q->rowCount() > 0){
             foreach ($results as $row){
-                $projectsList .= "<option value=".$row['name']">".$row['name']."</option>"
+                $titleName = ucwords($row['name']);
+                $projectsList .= "<option value='".$row['name']."'>".$titleName."</option>";
             }
         }else{
-            
+            die("Error listing projects.");
         } 
         
         $q->closeCursor();
 
+    } catch(PDOException $e) {
+        echo "Connection failed: " . $e->getMessage();
+        exit();
+    }
+    
+}
 
+function removeProject($name){
+    global $db_hostname;
+    global $db_username;
+    global $db_password;
+    global $db_project;
+    
+    $dsn = "mysql:host=$db_hostname;dbname=$db_project";
+    try {
+        $db = new PDO($dsn, $db_username, $db_password);
+        $sql = "DELETE FROM projects WHERE name='$name'";
+        $q = $db->prepare($sql);
+
+        if($q->execute() === false){
+            die('Error deleting project.');
+        }
+        
+        $q->closeCursor();
+        
     } catch(PDOException $e) {
         echo "Connection failed: " . $e->getMessage();
         exit();
