@@ -168,7 +168,7 @@ function removeProject($name){
     
 }
 
-function populateProjects($category, &$projectOutput){
+function populateProjects($category, &$projectOutput, &$projectOutput2){
     global $db_hostname;
     global $db_username;
     global $db_password;
@@ -224,7 +224,7 @@ function populateProjects($category, &$projectOutput){
                 $link        = $row['link'];
                 $image       = $row['image'];
 
-                $projectOutput .= "
+                $projectOutput2 .= "
 
                             <div id='modal-$counter' class='popup-modal slider mfp-hide'>	
                                     <div class='media'>

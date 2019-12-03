@@ -4,6 +4,21 @@ include ('functions.php');
 
 error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
 ini_set('display_errors' , 1);
+
+
+//generate projects
+populateProjects("arvr", $projectsOutput, $projectsOutput2);
+$outputARVR = $projectsOutput;
+
+populateProjects("class", $projectsOutput, $projectsOutput2);
+$outputCLASS = $projectsOutput;
+
+populateProjects("misc", $projectsOutput, $projectsOutput2);
+$outputMISC = $projectsOutput;
+
+populateProjects("all", $projectsOutput, $projectsOutput2);
+$outputALL = $projectsOutput;
+$outputALL2 = $projectsOutput2;
 ?>
 
 <!DOCTYPE html>
@@ -243,26 +258,27 @@ ini_set('display_errors' , 1);
             <div id="folio-wrapper" class="block-1-2 block-mob-full stack">
                 <div class="projectsARVR" id="projectsARVR">
                     <?php 
-                        populateProjects("arvr", $projectsOutput);
-                        echo $projectsOutput;
+                        echo $outputARVR;
                     ?>
                 </div>
                 <div class="projectsCLASS" id="projectsCLASS">
                     <?php 
-                        populateProjects("class", $projectsOutput);
-                        echo $projectsOutput;
+                        echo $outputCLASS;
                     ?>
                 </div>
                 <div class="projectsMISC" id="projectsMISC">
                     <?php 
-                        populateProjects("misc", $projectsOutput);
-                        echo $projectsOutput;
+                        echo $outputMISC;
                     ?>
                 </div>
                 <div class="projectsALL" id="projectsALL">
                     <?php 
-                        populateProjects("all", $projectsOutput);
-                        echo $projectsOutput;
+                        echo $outputALL;
+                    ?>
+                </div>
+                <div>
+                    <?php 
+                        echo $outputALL2;
                     ?>
                 </div>
 
