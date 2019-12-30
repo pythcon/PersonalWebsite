@@ -32,7 +32,7 @@ if($_POST) {
 	$message .= "Email address: " . $email . "<br />";
    $message .= "Message: <br />";
    $message .= $contact_message;
-   $message .= "<br /> ----- <br /> This email was sent from your site's contact form. <br />";
+   $message .= "<br /><br /> ----- <br /> This email was sent from your toddamurphy.me's contact form. <br />";
 
    // Set From: header
    $from =  $name . " <" . $email . ">";
