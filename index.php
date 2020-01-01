@@ -107,7 +107,8 @@ $outputALL2 = $projectsOutput2;
 
 	   			<p class="intro-position">
 	   				<span>VR Developer</span>
-	   				<span>and so much more</span> 
+	   				<span>Pinball Enthusiast</span>
+                    <span>and so much more</span> 
 	   			</p>
 
 	   			<a class="button stroke smoothscroll" href="#about" title="">More About Me</a>
