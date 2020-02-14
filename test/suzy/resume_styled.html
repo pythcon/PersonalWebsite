@@ -4,8 +4,102 @@
 <head>
     <title>Suzy's Resume</title>
 
-    <link rel="stylesheet" href="main.css">
     <link href="//db.onlinewebfonts.com/c/03cbeb913835a1cc045d31bd91168ffd?family=Garamond+Premier+Pro" rel="stylesheet" type="text/css"/>
+    
+    <style>
+        @font-face {
+    font-family: "Garamond Premier Pro";
+    src: url("http://toddamurphy.me/fonts/garamondpremrpro.otf") format("opentype");
+}
+
+@import url(//db.onlinewebfonts.com/c/03cbeb913835a1cc045d31bd91168ffd?family=Garamond+Premier+Pro);
+
+html{
+    font-family: "Garamond Premier Pro";
+    font-size: 1.1em;
+    letter-spacing: .03em;
+}
+
+body {
+    background-color: lightgray;
+    width: 75;
+}
+
+#navbar ul{
+    display: inline-block;
+}
+
+#navbar nav {
+    text-align: center;
+   
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+nav li {
+    float: left;
+    margin: 0 auto;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: grey;
+}
+
+h1,h2,h3,h4,h5 {
+    padding: 0;
+    margin: 0;
+}
+
+p {
+    padding: 0;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 0;
+}
+
+footer{
+    width: 100%;
+    float: left;
+}
+
+.row{
+    display: flex;    
+}
+
+.leftColumn{
+    padding: 0 1em;
+    width: 75%;
+    float: none;
+}
+.rightColumn{
+    width: 25%;
+    padding-right: 1em;
+}
+
+.rightColumn ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0 0 0 1em;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+    </style>
+    
 </head>
 
 <body>
@@ -15,13 +109,15 @@
         </center>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#experience">Work Experience</a></li>
-            <li><a href="#leadership">Leadership</a></li>
-        </ul>
-    </nav>
+    <div id="navbar">
+        <nav>
+            <ul>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Work Experience</a></li>
+                <li><a href="#leadership">Leadership</a></li>
+            </ul>
+        </nav>
+    </div>
     <div class="row">
         <div class="leftColumn">
             <section id="education">
@@ -140,8 +236,8 @@
         <hr>
         <br>
         <center>&copy Suzy Hlinka 2020 </center>
+        <br>
     </footer>
-    <br>
 
 </body>
 
