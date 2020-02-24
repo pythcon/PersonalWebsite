@@ -106,7 +106,8 @@ $outputALL2 = $projectsOutput2;
 	   			<h1>I'm Todd Murphy.</h1>
 
 	   			<p class="intro-position">
-	   				<span>VR Developer</span>
+	   				<span>Web Developer</span>
+	   				<span>Hacker</span>
 	   				<span>Pinball Enthusiast</span>
                     <span>and so much more</span> 
 	   			</p>
