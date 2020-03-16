@@ -8,15 +8,15 @@ then
     exit 1
 fi
 
-if ps ax | grep $0 | grep -v $$ | grep "tvStart.sh" | grep -v grep
+if pgrep -x "tvStart.sh" > /dev/null
 then
     echo "tvStart.sh running...exiting"
 else
-    if ps ax | grep $0 | grep -v $$ | grep "tvContinue.sh" | grep -v grep
+    if pgrep -x "tvContinue.sh" > /dev/null
     then
         echo "tvContinue.sh running...exiting"
     else
-        if ps ax | grep $0 | grep -v $$ | grep "vlc" | grep -v grep
+        if pgrep -x "vlc" > /dev/null
         then
             echo "VLC running...exiting"
         else
