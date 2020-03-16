@@ -28,17 +28,13 @@ if dir == "":
 ########################################################
 ########################################################
 
-cartoons = ["1973 Super Friends", "1977 The All-New Super Friends Hour", "1978 Challenge of the SuperFriends", "1979 The World's Greatest Super Friends",
-            "1984 Super Friends The Legendary Super Powers Show", "1985 The Super Powers Team Galactic Guardians", "A Pup Named Scooby Doo", "Baby Looney Tunes", "Courage The Cowardly Dog",
-            "Dexter's Laboratory", "Ed,Edd n' Eddy", "Josie and the Pussycats", "Popeye", "Scooby Doo, Where Are You", "Speed Buggy", "SuperFriends(1980)", "The 13 Ghosts Of Scooby-Doo",
-            "The Flintstones", "The Jetsons", "The Looney Tunes Show", "The New Scooby-Doo Movies", "The Pink Panther Cartoon", "The Smurfs",
-            "Tom & Jerry"]
+cartoons = ["show1", "show2", "show3"]
 
-dir = "/mnt/plexNAS/TV/" # Directory to grab shows from (make sure there is a "/" at the end!)
-tvDirectory = "/mnt/plexNAS/Files/tv/" # Directory where files will be generated (make sure there is a "/" at the end!)
-timezone = "-0400" # Enter Timezone
-showPoster = "http://toddamurphy.me/logos/todderang.png"
-channelName = "Todderang"
+dir = "" # Directory to grab shows from (make sure there is a "/" at the end!)
+tvDirectory = "" # Directory where files will be generated (make sure there is a "/" at the end!)
+timezone = "" # Enter Timezone
+showPoster = ""
+channelName = ""
 
 ########################################################
 ########################################################
@@ -47,11 +43,6 @@ channelName = "Todderang"
 ########################################################
 
 
-cartoons1 = ["1973 Super Friends", "1977 The All-New Super Friends Hour", "1978 Challenge of the SuperFriends", "1979 The World's Greatest Super Friends",
-             "1984 Super Friends The Legendary Super Powers Show", "1985 The Super Powers Team Galactic Guardians", "A Pup Named Scooby Doo", "Baby Looney Tunes", "Courage The Cowardly Dog",
-             "Dexter's Laboratory", "Ed,Edd n' Eddy", "Hong Kong Phooey", "Josie and the Pussycats", "Popeye", "Scooby Doo, Where Are You", "Snagglepuss", "Speed Buggy",
-             "SuperFriends(1980)", "The 13 Ghosts Of Scooby-Doo", "The Flintstones", "The Jetsons", "The Looney Tunes Show", "The New Scooby-Doo Movies",
-             "The Pink Panther Cartoon", "The Smurfs", "The Super Friends", "Yogi Bear Show", "Tom & Jerry"]
 cartoonsLeft = cartoons.copy()
 showDirectory = []
 previousRandomShow = 999
