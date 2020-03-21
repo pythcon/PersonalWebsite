@@ -483,8 +483,7 @@ $outputALL2 = $projectsOutput2;
    			<h5>Where to find me</h5>
 
    			<p>
-            Sewell, NJ<br>
-            08080 USA
+            New Jersey, USA
             </p>
 
    		</div>
